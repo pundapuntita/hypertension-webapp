@@ -24,7 +24,7 @@ export default {
                 }
             },
             fontFamily: {
-                sans: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+                sans: ['"LINE Seed Sans TH"', 'Poppins', 'Inter', 'system-ui', 'sans-serif'],
             },
             boxShadow: {
                 'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
