@@ -9,7 +9,7 @@ export function Welcome() {
     const { t } = useTranslation();
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-pastel-green via-white to-pastel-blue flex items-center justify-center p-6">
+        <div className="min-h-screen bg-gradient-to-br from-pastel-green via-white to-pastel-blue flex items-center justify-center p-6 pb-32 md:pb-12">
             <div className="w-full max-w-5xl grid md:grid-cols-2 gap-12 items-center">
 
                 {/* Left Content */}
