@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { Welcome } from './pages/Welcome'
 import { HealthForm } from './pages/HealthForm'
 import { Result } from './pages/Result'
@@ -24,6 +24,16 @@ function PrivacyFooter() {
     )
 }
 
+function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+}
+
 function App() {
     const [prediction, setPrediction] = useState(null)
     const [formData, setFormData] = useState(null)
@@ -35,6 +45,7 @@ function App() {
 
     return (
         <Router>
+            <ScrollToTop />
             <LanguageSwitcher />
             <Routes>
                 <Route path="/" element={<Welcome />} />

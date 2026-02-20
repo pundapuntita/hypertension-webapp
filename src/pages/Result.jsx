@@ -12,6 +12,7 @@ export function Result({ prediction, resultData }) {
     const [percent, setPercent] = useState(0);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         if (!prediction) return;
         let start = 0;
         const end = prediction.probability;
