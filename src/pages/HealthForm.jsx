@@ -112,7 +112,7 @@ export function HealthForm({ onSubmit }) {
 
                     {/* Header */}
                     {/* Header */}
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10 pt-16 md:pt-0">
                         <div className="flex items-center gap-4">
                             <button onClick={() => navigate('/')} className="p-3 bg-white/80 backdrop-blur-md rounded-full shadow-sm hover:shadow-md transition-all text-gray-500 hover:text-primary">
                                 <ChevronLeft className="w-6 h-6" />

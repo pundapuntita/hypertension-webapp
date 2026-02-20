@@ -69,7 +69,7 @@ export function Result({ prediction, resultData }) {
             <div className="relative z-10 p-6 md:p-12 pb-32">
                 <div className="max-w-4xl mx-auto">
 
-                    <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-stretch">
+                    <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-stretch pt-16 md:pt-0">
                         {/* Left Column: Result Card */}
                         <div className="flex flex-col space-y-4 h-full">
                             <h1 className="text-3xl font-bold text-gray-900">{t('result_title')}</h1>
