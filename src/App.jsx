@@ -10,10 +10,13 @@ import { useTranslation } from 'react-i18next'
 function PrivacyFooter() {
     const { t } = useTranslation()
     return (
-        <div className="fixed bottom-0 left-0 w-full py-3 bg-white/80 backdrop-blur-md border-t border-gray-100 z-50 animate-in slide-in-from-bottom duration-500 print:hidden">
-            <div className="max-w-7xl mx-auto px-4 text-center">
-                <p className="text-xs font-medium text-gray-500 flex justify-center items-center gap-2">
+        <div className="fixed bottom-0 left-0 w-full py-2 bg-white/80 backdrop-blur-md border-t border-gray-100 z-50 animate-in slide-in-from-bottom duration-500 print:hidden">
+            <div className="max-w-7xl mx-auto px-4 text-center space-y-0.5">
+                <p className="text-[10px] md:text-xs font-medium text-gray-500 flex justify-center items-center gap-2">
                     {t('privacy_guarantee')}
+                </p>
+                <p className="text-[9px] md:text-[10px] text-gray-400">
+                    {t('developed_by')}
                 </p>
             </div>
         </div>

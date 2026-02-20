@@ -97,6 +97,7 @@ const resources = {
             status_high: "High",
             status_low: "Low",
             privacy_guarantee: "🔒 100% Local Processing: Your medical data never leaves this device.",
+            developed_by: "Developed by Puntita Sae-jia",
 
             // Language Switcher
             lang_th: "Thai",
@@ -195,6 +196,7 @@ const resources = {
             status_high: "สูงกว่าเกณฑ์",
             status_low: "ต่ำกว่าเกณฑ์",
             privacy_guarantee: "🔒 ข้อมูลถูกประมวลผลบนเครื่องของคุณเท่านั้น ไม่ส่งขึ้นเซิร์ฟเวอร์",
+            developed_by: "พัฒนาโดย ปัณณิตา แซ่เจีย",
 
             // Language Switcher
             lang_th: "ภาษาไทย",
