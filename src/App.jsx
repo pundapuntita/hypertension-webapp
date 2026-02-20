@@ -15,9 +15,10 @@ function PrivacyFooter() {
                 <p className="text-[10px] md:text-xs font-medium text-gray-500 flex justify-center items-center gap-2">
                     {t('privacy_guarantee')}
                 </p>
-                <p className="text-[9px] md:text-[10px] text-gray-400">
-                    {t('developed_by')}
-                </p>
+                <div className="text-[9px] md:text-[10px] text-gray-400 leading-tight">
+                    <p>{t('developed_by')}</p>
+                    <p>{t('supported_by')}</p>
+                </div>
             </div>
         </div>
     )
