@@ -97,7 +97,7 @@ const resources = {
             status_high: "High",
             status_low: "Low",
             privacy_guarantee: "🔒 100% Local Processing: Your medical data never leaves this device.",
-            developed_by: "Developed by Puntita Sae-jia, Ph.D. Student, Dept. of Mathematics, Faculty of Science, Chiang Mai University.",
+            developed_by: "Developed by Puntita Sae-jia, Ph.D. Student, Department of Mathematics, Faculty of Science, Chiang Mai University.",
             supported_by: "Supported by a research grant from Chiang Mai University.",
 
 
