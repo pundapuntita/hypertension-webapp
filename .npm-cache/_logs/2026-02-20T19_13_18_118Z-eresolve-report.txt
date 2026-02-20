@@ -1,0 +1,18 @@
+'Log files:
+/Volumes/งาน/ ปัณด้า/PhD/web app/.npm-cache/_logs/2026-02-20T19_13_18_118Z-debug-0.log
+
+# npm resolution error report
+
+While resolving: hypertension-prediction-app@0.0.0
+Found: vite@5.4.21
+node_modules/vite
+  dev vite@"^5.0.0" from the root project
+
+Could not resolve dependency:
+peer vite@"^6.0.0 || ^7.0.0" from @vitejs/plugin-basic-ssl@2.1.4
+node_modules/@vitejs/plugin-basic-ssl
+  @vitejs/plugin-basic-ssl@"*" from the root project
+
+Fix the upstream dependency conflict, or retry
+this command with --force or --legacy-peer-deps
+to accept an incorrect (and potentially broken) dependency resolution.

@@ -1,0 +1,16 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.7.0
+2 info using node@v20.15.0
+3 silly config:load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config:load:file:/Volumes/งาน/ ปัณด้า/PhD/web app/.npmrc
+5 silly config:load:file:/Users/punda/.npmrc
+6 silly config:load:file:/usr/local/etc/npmrc
+7 verbose title npm install i18next react-i18next
+8 verbose argv "install" "i18next" "react-i18next"
+9 verbose logfile logs-max:10 dir:/Volumes/งาน/ ปัณด้า/PhD/web app/.npm-cache/_logs/2026-02-20T15_59_51_128Z-
+10 verbose logfile /Volumes/งาน/ ปัณด้า/PhD/web app/.npm-cache/_logs/2026-02-20T15_59_51_128Z-debug-0.log
+11 silly logfile start cleaning logs, removing 2 files
+12 silly logfile done cleaning log files
+13 silly idealTree buildDeps
+14 silly fetch manifest i18next@*
+15 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules/fsevents
