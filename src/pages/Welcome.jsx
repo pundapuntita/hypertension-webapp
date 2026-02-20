@@ -53,28 +53,28 @@ export function Welcome() {
                 </div>
 
                 {/* Right Illustration */}
-                <div className="order-1 md:order-2 flex justify-center relative mt-8 md:mt-0">
+                <div className="order-1 md:order-2 flex justify-center relative mt-8 md:mt-0 lg:ml-12">
                     <div className="absolute inset-0 bg-gradient-to-tr from-pastel-purple/30 to-pastel-pink/30 rounded-full blur-[100px] animate-pulse"></div>
-                    <div className="relative bg-white/40 backdrop-blur-xl p-10 md:p-12 rounded-[3.5rem] shadow-soft border border-white/60 transform hover:scale-[1.02] transition-transform duration-500">
-                        <Activity className="w-32 h-32 md:w-48 md:h-48 text-accent-pink drop-shadow-2xl animate-[bounce_3s_infinite]" />
+                    <div className="relative bg-white/40 backdrop-blur-xl p-10 md:p-16 lg:p-20 rounded-[3.5rem] lg:rounded-[4rem] shadow-soft border border-white/60 transform hover:scale-[1.02] transition-transform duration-500">
+                        <Activity className="w-32 h-32 md:w-56 md:h-56 lg:w-72 lg:h-72 text-accent-pink drop-shadow-2xl animate-[bounce_3s_infinite]" />
 
                         {/* Floating Cards */}
-                        <div className="absolute -right-4 md:-right-8 top-6 md:top-10 bg-white/95 backdrop-blur-md p-2.5 md:p-4 rounded-xl md:rounded-2xl shadow-lg animate-[bounce_4s_infinite]">
-                            <div className="flex items-center gap-2 md:gap-3">
-                                <div className="w-8 h-8 md:w-10 md:h-10 shrink-0 rounded-full bg-red-100 flex items-center justify-center text-red-500 font-bold text-xs md:text-base">❤️</div>
+                        <div className="absolute -right-4 md:-right-12 lg:-right-16 top-6 md:top-12 lg:top-16 bg-white/95 backdrop-blur-md p-2.5 md:p-5 lg:p-6 rounded-xl md:rounded-2xl lg:rounded-3xl shadow-lg animate-[bounce_4s_infinite]">
+                            <div className="flex items-center gap-2 md:gap-4">
+                                <div className="w-8 h-8 md:w-12 md:h-12 lg:w-14 lg:h-14 shrink-0 rounded-full bg-red-100 flex items-center justify-center text-red-500 font-bold text-xs md:text-lg lg:text-xl">❤️</div>
                                 <div>
-                                    <p className="text-[10px] md:text-xs text-gray-400 whitespace-nowrap leading-tight">{t('heart_rate_label')}</p>
-                                    <p className="text-xs md:text-base font-bold text-gray-800 leading-tight">72 bpm</p>
+                                    <p className="text-[10px] md:text-sm lg:text-base text-gray-400 whitespace-nowrap leading-tight">{t('heart_rate_label')}</p>
+                                    <p className="text-xs md:text-lg lg:text-xl font-bold text-gray-800 leading-tight">72 bpm</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="absolute -left-4 md:-left-8 bottom-6 md:bottom-10 bg-white/95 backdrop-blur-md p-2.5 md:p-4 rounded-xl md:rounded-2xl shadow-lg animate-[bounce_5s_infinite]">
-                            <div className="flex items-center gap-2 md:gap-3">
-                                <div className="w-8 h-8 md:w-10 md:h-10 shrink-0 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 font-bold text-xs md:text-base">💧</div>
+                        <div className="absolute -left-4 md:-left-12 lg:-left-16 bottom-6 md:bottom-12 lg:bottom-16 bg-white/95 backdrop-blur-md p-2.5 md:p-5 lg:p-6 rounded-xl md:rounded-2xl lg:rounded-3xl shadow-lg animate-[bounce_5s_infinite]">
+                            <div className="flex items-center gap-2 md:gap-4">
+                                <div className="w-8 h-8 md:w-12 md:h-12 lg:w-14 lg:h-14 shrink-0 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 font-bold text-xs md:text-lg lg:text-xl">💧</div>
                                 <div>
-                                    <p className="text-[10px] md:text-xs text-gray-400 whitespace-nowrap leading-tight">{t('bp_label')}</p>
-                                    <p className="text-xs md:text-base font-bold text-gray-800 leading-tight">120/80</p>
+                                    <p className="text-[10px] md:text-sm lg:text-base text-gray-400 whitespace-nowrap leading-tight">{t('bp_label')}</p>
+                                    <p className="text-xs md:text-lg lg:text-xl font-bold text-gray-800 leading-tight">120/80</p>
                                 </div>
                             </div>
                         </div>
