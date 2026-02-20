@@ -13,7 +13,7 @@ export function LanguageSwitcher() {
     return (
         <button
             onClick={toggleLanguage}
-            className="fixed top-6 right-6 z-50 flex items-center gap-2 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full shadow-sm hover:shadow-md border border-white/50 transition-all group"
+            className="absolute top-[max(1.5rem,env(safe-area-inset-top))] right-[max(1.5rem,env(safe-area-inset-right))] z-50 flex items-center gap-2 bg-white/80 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-sm hover:shadow-md border border-white/50 transition-all group"
             title="Switch Language"
         >
             <Globe className="w-5 h-5 text-gray-500 group-hover:text-primary transition-colors" />
