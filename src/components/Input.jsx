@@ -1,7 +1,7 @@
 import React from 'react';
 import { Info } from 'lucide-react';
 
-export function Input({ label, type = 'text', value, onChange, placeholder, name, min, max, icon, tooltipInfo }) {
+export function Input({ label, type = 'text', value, onChange, placeholder, name, min, max, icon, tooltipInfo, error }) {
     return (
         <div className="mb-5 group/input">
             <div className="flex items-center gap-1.5 mb-2 ml-1">
@@ -29,9 +29,10 @@ export function Input({ label, type = 'text', value, onChange, placeholder, name
                     placeholder={placeholder}
                     min={min}
                     max={max}
-                    className="w-full pl-4 pr-4 py-3.5 bg-gray-50/50 border border-gray-200 rounded-xl text-gray-800 
-                     focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white 
-                     transition-all outline-none placeholder:text-gray-300"
+                    className={`w-full pl-4 pr-4 py-3.5 bg-gray-50/50 border rounded-xl text-gray-800 transition-all outline-none placeholder:text-gray-300 ${error
+                            ? 'border-red-500 bg-red-50/50 focus:ring-2 focus:ring-red-500/20 focus:border-red-500 focus:bg-white'
+                            : 'border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white'
+                        }`}
                 />
                 {icon && (
                     <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400">
@@ -39,6 +40,11 @@ export function Input({ label, type = 'text', value, onChange, placeholder, name
                     </div>
                 )}
             </div>
+            {error && (
+                <p className="text-red-500 text-[11px] mt-1.5 ml-1 font-medium animate-in slide-in-from-top-1">
+                    {error}
+                </p>
+            )}
         </div>
     );
 }

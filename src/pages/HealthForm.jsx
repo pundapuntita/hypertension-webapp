@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 export function HealthForm({ onSubmit }) {
     const navigate = useNavigate();
     const { t } = useTranslation();
+    const [errors, setErrors] = useState({});
     const [formData, setFormData] = useState({
         age: '',
         gender: 'male',
@@ -23,6 +24,9 @@ export function HealthForm({ onSubmit }) {
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
+        if (errors[e.target.name]) {
+            setErrors({ ...errors, [e.target.name]: null });
+        }
     };
 
     const fillExample = (type) => {
@@ -63,28 +67,37 @@ export function HealthForm({ onSubmit }) {
     };
 
     const handleSubmit = async () => {
-        // Basic validation
-        if (!formData.age || !formData.weight || !formData.height || !formData.heartRate) {
-            alert(t('validation_error'));
-            return;
-        }
+        const newErrors = {};
+
+        // Required fields
+        ['age', 'weight', 'height', 'heartRate'].forEach(field => {
+            if (!formData[field]) {
+                newErrors[field] = t('error_required');
+            }
+        });
 
         // Strict Range Validation
-        const isOutOfRange = (val, min, max) => {
-            const num = parseFloat(val);
-            return isNaN(num) || num < min || num > max;
+        const checkRange = (field, min, max) => {
+            if (formData[field]) {
+                const num = parseFloat(formData[field]);
+                if (isNaN(num) || num < min || num > max) {
+                    newErrors[field] = t('error_range', { min, max });
+                }
+            }
         };
 
-        if (
-            isOutOfRange(formData.age, 8, 120) ||
-            isOutOfRange(formData.weight, 20, 300) ||
-            isOutOfRange(formData.height, 50, 250) ||
-            isOutOfRange(formData.heartRate, 30, 250) ||
-            (formData.temp && isOutOfRange(formData.temp, 30, 45)) ||
-            (formData.rr && isOutOfRange(formData.rr, 8, 60)) ||
-            (formData.spo2 && isOutOfRange(formData.spo2, 50, 100))
-        ) {
-            alert(t('range_error'));
+        checkRange('age', 8, 120);
+        checkRange('weight', 20, 300);
+        checkRange('height', 50, 250);
+        checkRange('heartRate', 30, 250);
+        checkRange('temp', 30, 45);
+        checkRange('rr', 8, 60);
+        checkRange('spo2', 50, 100);
+
+        setErrors(newErrors);
+
+        if (Object.keys(newErrors).length > 0) {
+            alert(t('validation_error'));
             return;
         }
 
@@ -150,6 +163,7 @@ export function HealthForm({ onSubmit }) {
                                     onChange={handleChange}
                                     placeholder="e.g. 45"
                                     icon={<User className="w-4 h-4" />}
+                                    error={errors.age}
                                 />
                                 <Select
                                     label={t('gender_label')}
@@ -173,6 +187,7 @@ export function HealthForm({ onSubmit }) {
                                         onChange={handleChange}
                                         placeholder="70"
                                         icon={<Weight className="w-4 h-4" />}
+                                        error={errors.weight}
                                     />
                                     <Input
                                         label={t('height_label')}
@@ -182,6 +197,7 @@ export function HealthForm({ onSubmit }) {
                                         onChange={handleChange}
                                         placeholder="175"
                                         icon={<Ruler className="w-4 h-4" />}
+                                        error={errors.height}
                                     />
                                 </div>
                             </Card>
@@ -237,6 +253,7 @@ export function HealthForm({ onSubmit }) {
                                         placeholder="36.5"
                                         icon={<Thermometer className="w-4 h-4" />}
                                         tooltipInfo={t('tt_temp')}
+                                        error={errors.temp}
                                     />
                                     <Input
                                         label={t('hr_label')}
@@ -247,6 +264,7 @@ export function HealthForm({ onSubmit }) {
                                         placeholder="72"
                                         icon={<Heart className="w-4 h-4" />}
                                         tooltipInfo={t('tt_hr')}
+                                        error={errors.heartRate}
                                     />
                                     <Input
                                         label={t('rr_label')}
@@ -257,6 +275,7 @@ export function HealthForm({ onSubmit }) {
                                         placeholder={t('rr_placeholder')}
                                         icon={<Wind className="w-4 h-4" />}
                                         tooltipInfo={t('tt_rr')}
+                                        error={errors.rr}
                                     />
                                     <Input
                                         label={t('spo2_label')}
@@ -268,6 +287,7 @@ export function HealthForm({ onSubmit }) {
                                         max="100"
                                         icon={<Activity className="w-4 h-4" />}
                                         tooltipInfo={t('tt_spo2')}
+                                        error={errors.spo2}
                                     />
                                 </div>
 

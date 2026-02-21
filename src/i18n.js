@@ -76,6 +76,8 @@ const resources = {
             validation_error: "Please fill in key fields (Age, Weight, Height, Heart Rate)",
             range_error: "Some values are out of realistic medical ranges. Please check. (e.g., Age 8-120, HR 30-250)",
             calculation_error: "Error calculating risk. Please check console.",
+            error_required: "Required field",
+            error_range: "Valid range: {{min}}-{{max}}",
 
             // Recommendations
             rec_high_risk_doctor: "Consult a doctor immediately to evaluate your blood pressure and heart health.",
@@ -97,7 +99,8 @@ const resources = {
             status_high: "High",
             status_low: "Low",
             privacy_guarantee: "🔒 100% Local Processing: Your medical data never leaves this device.",
-            developed_by: "Developed by Puntita Sae-jia, Ph.D. Student, Department of Mathematics, Faculty of Science, Chiang Mai University.",
+            developed_by_1: "Developed by Puntita Sae-jia, Ph.D. Student,",
+            developed_by_2: "Department of Mathematics, Faculty of Science, Chiang Mai University.",
             supported_by: "Supported by a research grant from Chiang Mai University.",
 
 
@@ -177,6 +180,8 @@ const resources = {
             validation_error: "กรุณากรอกข้อมูลสำคัญให้ครบ (อายุ, น้ำหนัก, ส่วนสูง, อัตราหัวใจ)",
             range_error: "ตัวเลขบางค่าเกินช่วงปกติที่เป็นไปได้ กรุณาตรวจสอบอีกครั้ง (เช่น อายุ 8-120 ปี, อัตราหัวใจ 30-250)",
             calculation_error: "เกิดข้อผิดพลาดในการคำนวณ โปรดลองใหม่อีกครั้ง",
+            error_required: "กรุณาระบุข้อมูล",
+            error_range: "ควรอยู่ระหว่าง {{min}}-{{max}}",
 
             // Recommendations
             rec_high_risk_doctor: "ควรปรึกษาแพทย์โดยเร็วเพื่อตรวจวัดความดันโลหิตและรับการประเมินสุขภาพอย่างละเอียด",
@@ -198,7 +203,8 @@ const resources = {
             status_high: "สูงกว่าเกณฑ์",
             status_low: "ต่ำกว่าเกณฑ์",
             privacy_guarantee: "🔒 ข้อมูลถูกประมวลผลบนเครื่องของคุณเท่านั้น ไม่ส่งขึ้นเซิร์ฟเวอร์",
-            developed_by: "พัฒนาโดย ปัณฑิตา แซ่เจี่ย นักศึกษาปริญญาเอก ภาควิชาคณิตศาสตร์ คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่",
+            developed_by_1: "พัฒนาโดย ปัณฑิตา แซ่เจี่ย นักศึกษาปริญญาเอก",
+            developed_by_2: "ภาควิชาคณิตศาสตร์ คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่",
             supported_by: "ได้รับการสนับสนุนทุนวิจัยจากมหาวิทยาลัยเชียงใหม่",
 
             // Language Switcher

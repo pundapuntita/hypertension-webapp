@@ -16,7 +16,10 @@ function PrivacyFooter() {
                     {t('privacy_guarantee')}
                 </p>
                 <div className="text-[9px] md:text-[10px] text-gray-400 leading-tight">
-                    <p>{t('developed_by')}</p>
+                    <p>
+                        <span>{t('developed_by_1')}</span>{' '}
+                        <span className="block md:inline">{t('developed_by_2')}</span>
+                    </p>
                     <p>{t('supported_by')}</p>
                 </div>
             </div>
