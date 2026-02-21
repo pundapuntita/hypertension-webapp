@@ -30,6 +30,7 @@ export function HealthForm({ onSubmit }) {
     };
 
     const fillExample = (type) => {
+        setErrors({}); // Clear existing errors when auto-filling
         if (type === 'high') {
             setFormData({
                 age: '65',
@@ -97,7 +98,21 @@ export function HealthForm({ onSubmit }) {
         setErrors(newErrors);
 
         if (Object.keys(newErrors).length > 0) {
-            alert(t('validation_error'));
+            const fieldLabels = {
+                age: t('age_label'),
+                weight: t('weight_label'),
+                height: t('height_label'),
+                heartRate: t('hr_label'),
+                temp: t('temp_label'),
+                rr: t('rr_label'),
+                spo2: t('spo2_label')
+            };
+
+            const errorMessages = Object.keys(newErrors).map(field => {
+                return `- ${fieldLabels[field]}: ${newErrors[field]}`;
+            }).join('\n');
+
+            alert(`${t('error_summary')}\n\n${errorMessages}`);
             return;
         }
 

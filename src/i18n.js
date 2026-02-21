@@ -76,6 +76,7 @@ const resources = {
             validation_error: "Please fill in key fields (Age, Weight, Height, Heart Rate)",
             range_error: "Some values are out of realistic medical ranges. Please check. (e.g., Age 8-120, HR 30-250)",
             calculation_error: "Error calculating risk. Please check console.",
+            error_summary: "Please correct the following errors:",
             error_required: "Required field",
             error_range: "Valid range: {{min}}-{{max}}",
 
@@ -180,6 +181,7 @@ const resources = {
             validation_error: "กรุณากรอกข้อมูลสำคัญให้ครบ (อายุ, น้ำหนัก, ส่วนสูง, อัตราหัวใจ)",
             range_error: "ตัวเลขบางค่าเกินช่วงปกติที่เป็นไปได้ กรุณาตรวจสอบอีกครั้ง (เช่น อายุ 8-120 ปี, อัตราหัวใจ 30-250)",
             calculation_error: "เกิดข้อผิดพลาดในการคำนวณ โปรดลองใหม่อีกครั้ง",
+            error_summary: "กรุณาตรวจสอบและแก้ไขข้อมูลต่อไปนี้:",
             error_required: "กรุณาระบุข้อมูล",
             error_range: "ควรอยู่ระหว่าง {{min}}-{{max}}",
 
