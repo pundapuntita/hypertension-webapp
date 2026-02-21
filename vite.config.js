@@ -16,7 +16,7 @@ export default defineConfig({
       includeAssets: ['vite.svg', 'model/W.json', 'model/b.json', 'model/Beta_output.json'],
       manifest: {
         name: 'Hypertension Predictor',
-        short_name: 'BP Predict',
+        short_name: 'HP Predictor',
         description: 'AI-based Hypertension Risk Prediction App',
         theme_color: '#ffffff',
         icons: [

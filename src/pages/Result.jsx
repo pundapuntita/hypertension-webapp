@@ -13,7 +13,10 @@ export function Result({ prediction, resultData }) {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        if (!prediction) return;
+        if (!prediction) {
+            navigate('/');
+            return;
+        }
         let start = 0;
         const end = prediction.probability;
         const duration = 1500;
@@ -26,10 +29,9 @@ export function Result({ prediction, resultData }) {
         }, stepTime);
 
         return () => clearInterval(timer);
-    }, [prediction]);
+    }, [prediction, navigate]);
 
     if (!prediction) {
-        navigate('/');
         return null;
     }
 
@@ -174,7 +176,11 @@ export function Result({ prediction, resultData }) {
                         </div>
 
                         <div className="mt-8 flex flex-col md:flex-row justify-center gap-4 print:hidden">
-                            <Button onClick={() => navigate('/')} className="md:w-auto md:px-12 shadow-md">
+                            <Button onClick={() => {
+                                sessionStorage.removeItem('hp_formData');
+                                sessionStorage.removeItem('hp_prediction');
+                                navigate('/');
+                            }} className="md:w-auto md:px-12 shadow-md">
                                 <RefreshCcw className="w-4 h-4 mr-2" /> {t('start_new')}
                             </Button>
                             <Button variant="secondary" onClick={handlePrint} className="md:w-auto md:px-12 shadow-sm">

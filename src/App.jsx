@@ -38,10 +38,18 @@ function ScrollToTop() {
 }
 
 function App() {
-    const [prediction, setPrediction] = useState(null)
-    const [formData, setFormData] = useState(null)
+    const [prediction, setPrediction] = useState(() => {
+        const saved = sessionStorage.getItem('hp_prediction');
+        return saved ? JSON.parse(saved) : null;
+    })
+    const [formData, setFormData] = useState(() => {
+        const saved = sessionStorage.getItem('hp_formData');
+        return saved ? JSON.parse(saved) : null;
+    })
 
     const handleFormSubmit = (data, result) => {
+        sessionStorage.setItem('hp_formData', JSON.stringify(data));
+        sessionStorage.setItem('hp_prediction', JSON.stringify(result));
         setFormData(data)
         setPrediction(result)
     }
