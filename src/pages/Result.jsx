@@ -63,7 +63,7 @@ export function Result({ prediction, resultData }) {
     };
 
     return (
-        <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-pastel-cyan via-white to-pastel-purple">
+        <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-pastel-green via-white to-pastel-blue">
             {/* Soft decorative background circles */}
             <div className="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-pastel-bg/50 rounded-full blur-[80px]"></div>
             <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-pastel-pink/30 rounded-full blur-[80px]"></div>
