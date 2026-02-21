@@ -92,7 +92,7 @@ export function HealthForm({ onSubmit }) {
         checkRange('height', 50, 250);
         checkRange('heartRate', 30, 250);
         checkRange('temp', 32, 43);
-        checkRange('rr', 8, 60);
+        checkRange('rr', 8, 40);
         checkRange('spo2', 70, 100);
 
         setErrors(newErrors);
