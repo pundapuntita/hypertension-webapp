@@ -8,19 +8,20 @@ export default {
         extend: {
             colors: {
                 pastel: {
-                    pink: '#FFD1DC',
-                    green: '#D1E8E2', // Minty green
-                    purple: '#E0BBE4',
-                    blue: '#AEC6CF',
-                    bg: '#FDFBF7', // Off-white cream for background
+                    cyan: '#cffafe', // Light cyan top-left
+                    pink: '#fce7f3', // Light pink top-right
+                    purple: '#e9d5ff', // Light purple bottom
+                    blue: '#dbeafe', // Soft blue
+                    green: '#d1fae5', // Soft green 
+                    bg: '#f8fafc',
                 },
                 primary: {
-                    DEFAULT: '#957DAD', // Deeper pastel purple for actions
-                    hover: '#856D9D',
+                    DEFAULT: '#a78bfa', // Match the nice purple from the logo
+                    hover: '#8b5cf6',
                 },
                 accent: {
-                    pink: '#FF9AA2',
-                    blue: '#84B6F4',
+                    pink: '#f472b6',
+                    blue: '#60a5fa',
                 }
             },
             fontFamily: {
