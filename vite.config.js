@@ -13,7 +13,7 @@ export default defineConfig({
     basicSsl(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['vite.svg', 'model/W.json', 'model/b.json', 'model/Beta_output.json'],
+      includeAssets: ['icon-192.png', 'icon-512.png', 'model/W.json', 'model/b.json', 'model/Beta_output.json'],
       manifest: {
         name: 'Hypertension Predictor',
         short_name: 'HP Predictor',
@@ -21,14 +21,16 @@ export default defineConfig({
         theme_color: '#ffffff',
         icons: [
           {
-            src: 'vite.svg',
+            src: 'icon-192.png',
             sizes: '192x192',
-            type: 'image/svg+xml'
+            type: 'image/png',
+            purpose: 'any maskable'
           },
           {
-            src: 'vite.svg',
+            src: 'icon-512.png',
             sizes: '512x512',
-            type: 'image/svg+xml'
+            type: 'image/png',
+            purpose: 'any maskable'
           }
         ]
       }
