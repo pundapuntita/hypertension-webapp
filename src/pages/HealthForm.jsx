@@ -87,13 +87,13 @@ export function HealthForm({ onSubmit }) {
             }
         };
 
-        checkRange('age', 1, 130);
-        checkRange('weight', 10, 400);
-        checkRange('height', 40, 250);
-        checkRange('heartRate', 20, 300);
-        checkRange('temp', 25, 45);
-        checkRange('rr', 5, 100);
-        checkRange('spo2', 0, 100);
+        checkRange('age', 8, 120);
+        checkRange('weight', 20, 300);
+        checkRange('height', 50, 250);
+        checkRange('heartRate', 30, 250);
+        checkRange('temp', 32, 43);
+        checkRange('rr', 8, 60);
+        checkRange('spo2', 70, 100);
 
         setErrors(newErrors);
 
