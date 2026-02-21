@@ -87,13 +87,13 @@ export function HealthForm({ onSubmit }) {
             }
         };
 
-        checkRange('age', 8, 120);
-        checkRange('weight', 20, 300);
-        checkRange('height', 50, 250);
-        checkRange('heartRate', 30, 250);
-        checkRange('temp', 30, 45);
-        checkRange('rr', 8, 60);
-        checkRange('spo2', 50, 100);
+        checkRange('age', 1, 130);
+        checkRange('weight', 10, 400);
+        checkRange('height', 40, 250);
+        checkRange('heartRate', 20, 300);
+        checkRange('temp', 25, 45);
+        checkRange('rr', 5, 100);
+        checkRange('spo2', 0, 100);
 
         setErrors(newErrors);
 
@@ -229,8 +229,8 @@ export function HealthForm({ onSubmit }) {
                                                 <Info className="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors" />
                                             </div>
                                             {/* Tooltip */}
-                                            <div className="absolute bottom-full mb-3 -left-4 sm:left-1/2 sm:-translate-x-1/2 w-64 p-4 bg-gray-900/95 backdrop-blur-md text-white text-sm rounded-2xl shadow-2xl z-50 font-normal border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 pointer-events-none">
-                                                <div className="absolute -bottom-2 left-6 sm:left-1/2 sm:-translate-x-1/2 w-4 h-4 bg-gray-900/95 rotate-45 border-r border-b border-white/10"></div>
+                                            <div className="absolute bottom-full mb-3 right-0 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 w-64 p-4 bg-gray-900/95 backdrop-blur-md text-white text-sm rounded-2xl shadow-2xl z-50 font-normal border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 pointer-events-none text-left">
+                                                <div className="absolute -bottom-2 right-6 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 w-4 h-4 bg-gray-900/95 rotate-45 border-r border-b border-white/10"></div>
                                                 <div className="relative z-10">
                                                     <p className="font-semibold mb-3 text-gray-200">{t('normal_ranges_title')}</p>
                                                     <div className="space-y-2 text-xs text-gray-300">
