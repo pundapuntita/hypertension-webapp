@@ -135,7 +135,7 @@ export function HealthForm({ onSubmit }) {
             <div className="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-pastel-bg/50 rounded-full blur-[80px]"></div>
             <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-pastel-pink/30 rounded-full blur-[80px]"></div>
 
-            <div className="relative z-10 p-6 md:p-12 pb-32">
+            <div className="relative z-10 p-6 md:p-12 pb-48 md:pb-40">
                 <div className="max-w-4xl mx-auto">
 
                     {/* Header */}
