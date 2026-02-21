@@ -89,9 +89,9 @@ const resources = {
 
             // Features
             download_pdf: "Download PDF",
-            example_high_risk: "Example (High Risk)",
-            example_moderate_risk: "Example (Moderate Risk)",
-            example_low_risk: "Example (Low Risk)",
+            example_high_risk: "Example (High Risk Group)",
+            example_moderate_risk: "Example (Moderate Risk Group)",
+            example_low_risk: "Example (Low Risk Group)",
             vitals_summary: "Vitals Summary",
             status_normal: "Normal",
             status_high: "High",
@@ -190,9 +190,9 @@ const resources = {
 
             // Features
             download_pdf: "บันทึกผลเป็น PDF",
-            example_high_risk: "ตัวอย่างออโต้ (เสี่ยงสูง)",
-            example_moderate_risk: "ตัวอย่างออโต้ (เสี่ยงปานกลาง)",
-            example_low_risk: "ตัวอย่างออโต้ (เสี่ยงต่ำ)",
+            example_high_risk: "ตัวอย่างกลุ่มเสี่ยงสูง",
+            example_moderate_risk: "ตัวอย่างกลุ่มเสี่ยงปานกลาง",
+            example_low_risk: "ตัวอย่างกลุ่มเสี่ยงต่ำ",
             vitals_summary: "สรุปรายละเอียดสุขภาพ",
             status_normal: "ปกติ",
             status_high: "สูงกว่าเกณฑ์",
