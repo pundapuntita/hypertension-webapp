@@ -21,7 +21,7 @@ export function Welcome() {
 
                     <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-[1.15]">
                         {t('welcome_title_track')} <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-blue inline-block">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-blue inline-block pb-2 md:pb-4">
                             <Trans i18nKey="welcome_title_health" components={{ nw: <span className="whitespace-nowrap" /> }} />
                         </span>
                     </h1>
