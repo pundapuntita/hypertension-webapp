@@ -39,12 +39,16 @@ function ScrollToTop() {
 
 function App() {
     const [prediction, setPrediction] = useState(() => {
-        const saved = sessionStorage.getItem('hp_prediction');
-        return saved ? JSON.parse(saved) : null;
+        try {
+            const saved = sessionStorage.getItem('hp_prediction');
+            return saved && saved !== 'undefined' ? JSON.parse(saved) : null;
+        } catch (e) { return null; }
     })
     const [formData, setFormData] = useState(() => {
-        const saved = sessionStorage.getItem('hp_formData');
-        return saved ? JSON.parse(saved) : null;
+        try {
+            const saved = sessionStorage.getItem('hp_formData');
+            return saved && saved !== 'undefined' ? JSON.parse(saved) : null;
+        } catch (e) { return null; }
     })
 
     const handleFormSubmit = (data, result) => {
