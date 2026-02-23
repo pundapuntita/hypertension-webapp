@@ -10,7 +10,7 @@ const resources = {
             // Welcome Page
             welcome_badge: "Free Medical Assessment AI",
             welcome_title_track: "Track Your",
-            welcome_title_health: "Heart Health",
+            welcome_title_health: "<nw>Heart Health</nw>",
             welcome_desc: "Use our professional AI prediction engine to analyze your hypertension risk factors in seconds. Fast, private, and secure.",
             start_assessment: "Start Assessment",
             learn_more: "Learn More",
@@ -115,7 +115,7 @@ const resources = {
             // Welcome Page
             welcome_badge: "AI ประเมินสุขภาพเบื้องต้นฟรี",
             welcome_title_track: "ติดตาม",
-            welcome_title_health: "สุขภาพหัวใจของคุณ",
+            welcome_title_health: "สุขภาพหัวใจ<nw>ของคุณ</nw>",
             welcome_desc: "ใช้ระบบวิเคราะห์ความเสี่ยงความดันโลหิตสูงด้วย AI ของเรา ทราบผลทันที รวดเร็ว และเป็นส่วนตัว",
             start_assessment: "เริ่มการประเมิน",
             learn_more: "เรียนรู้เพิ่มเติม",

@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Activity, ArrowRight, ShieldCheck, FileText } from 'lucide-react';
 import { Button } from '../components/Button';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 export function Welcome() {
     const navigate = useNavigate();
@@ -21,8 +21,8 @@ export function Welcome() {
 
                     <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-[1.15]">
                         {t('welcome_title_track')} <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-blue">
-                            {t('welcome_title_health')}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-blue inline-block">
+                            <Trans i18nKey="welcome_title_health" components={{ nw: <span className="whitespace-nowrap" /> }} />
                         </span>
                     </h1>
 
