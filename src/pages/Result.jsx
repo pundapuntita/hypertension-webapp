@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 
 export function Result({ prediction, resultData }) {
     const navigate = useNavigate();
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [percent, setPercent] = useState(0);
 
     useEffect(() => {

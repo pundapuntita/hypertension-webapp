@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 
 export function HealthForm({ onSubmit }) {
     const navigate = useNavigate();
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [errors, setErrors] = useState({});
     const [formData, setFormData] = useState(() => {
         try {

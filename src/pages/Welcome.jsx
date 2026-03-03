@@ -6,7 +6,7 @@ import { useTranslation, Trans } from 'react-i18next';
 
 export function Welcome() {
     const navigate = useNavigate();
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     return (
         <div key={i18n.language} className="min-h-screen bg-gradient-to-br from-pastel-green via-white to-pastel-blue flex items-center justify-center p-6 pb-48 md:pb-24">
