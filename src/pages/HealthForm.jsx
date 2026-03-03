@@ -11,19 +11,37 @@ export function HealthForm({ onSubmit }) {
     const navigate = useNavigate();
     const { t } = useTranslation();
     const [errors, setErrors] = useState({});
-    const [formData, setFormData] = useState({
-        age: '',
-        gender: 'male',
-        weight: '',
-        height: '',
-        temp: '',
-        heartRate: '',
-        rr: '',
-        spo2: ''
+    const [formData, setFormData] = useState(() => {
+        try {
+            const saved = sessionStorage.getItem('hp_liveForm');
+            return saved ? JSON.parse(saved) : {
+                age: '',
+                gender: 'male',
+                weight: '',
+                height: '',
+                temp: '',
+                heartRate: '',
+                rr: '',
+                spo2: ''
+            };
+        } catch {
+            return {
+                age: '',
+                gender: 'male',
+                weight: '',
+                height: '',
+                temp: '',
+                heartRate: '',
+                rr: '',
+                spo2: ''
+            };
+        }
     });
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const newData = { ...formData, [e.target.name]: e.target.value };
+        setFormData(newData);
+        sessionStorage.setItem('hp_liveForm', JSON.stringify(newData));
         if (errors[e.target.name]) {
             setErrors({ ...errors, [e.target.name]: null });
         }
@@ -31,8 +49,9 @@ export function HealthForm({ onSubmit }) {
 
     const fillExample = (type) => {
         setErrors({}); // Clear existing errors when auto-filling
+        let data = {};
         if (type === 'high') {
-            setFormData({
+            data = {
                 age: '65',
                 gender: 'male',
                 weight: '90',
@@ -41,9 +60,9 @@ export function HealthForm({ onSubmit }) {
                 heartRate: '115',
                 rr: '24',
                 spo2: '93'
-            });
+            };
         } else if (type === 'moderate') {
-            setFormData({
+            data = {
                 age: '45',
                 gender: 'male',
                 weight: '75',
@@ -52,9 +71,9 @@ export function HealthForm({ onSubmit }) {
                 heartRate: '95',
                 rr: '18',
                 spo2: '96'
-            });
+            };
         } else {
-            setFormData({
+            data = {
                 age: '28',
                 gender: 'female',
                 weight: '52',
@@ -63,8 +82,10 @@ export function HealthForm({ onSubmit }) {
                 heartRate: '72',
                 rr: '16',
                 spo2: '99'
-            });
+            };
         }
+        setFormData(data);
+        sessionStorage.setItem('hp_liveForm', JSON.stringify(data));
     };
 
     const handleSubmit = async () => {
@@ -130,7 +151,7 @@ export function HealthForm({ onSubmit }) {
     };
 
     return (
-        <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-pastel-green via-white to-pastel-blue">
+        <div key={i18n.language} className="min-h-screen relative overflow-hidden bg-gradient-to-br from-pastel-green via-white to-pastel-blue">
             {/* Soft decorative background circles */}
             <div className="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-pastel-bg/50 rounded-full blur-[80px]"></div>
             <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-pastel-pink/30 rounded-full blur-[80px]"></div>
