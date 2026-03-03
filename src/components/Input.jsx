@@ -3,18 +3,19 @@ import { Info } from 'lucide-react';
 
 export function Input({ label, type = 'text', value, onChange, placeholder, name, min, max, icon, tooltipInfo, error }) {
     return (
-        <div className="mb-5 group/input relative">
+        <div className="mb-5 group/input">
             <div className="flex items-center gap-1.5 mb-2 ml-1">
                 <label className="block text-sm font-semibold text-gray-600 group-focus-within/input:text-primary transition-colors whitespace-nowrap">
                     {label}
                 </label>
                 {tooltipInfo && (
-                    <div className="group/tooltip flex items-center">
+                    <div className="relative group/tooltip flex items-center">
                         <div className="cursor-help">
                             <Info className="w-4 h-4 text-gray-400 group-hover/tooltip:text-primary transition-colors" />
                         </div>
-                        <div className="absolute bottom-[calc(100%-1.6rem)] md:bottom-full md:mb-1 left-1/2 -translate-x-1/2 w-max max-w-full p-2.5 md:p-3 bg-gray-900/95 backdrop-blur-md text-white text-[11px] md:text-xs rounded-xl shadow-xl z-50 font-normal border border-white/10 opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none text-center">
-                            <span className="relative z-10 block whitespace-normal md:whitespace-pre-wrap leading-relaxed break-words">{tooltipInfo}</span>
+                        <div className="absolute bottom-full mb-2.5 left-1/2 -translate-x-[25%] sm:-translate-x-1/2 w-max max-w-[260px] lg:max-w-xs p-2.5 md:p-3 bg-gray-900/95 backdrop-blur-md text-white text-[11.5px] md:text-xs rounded-xl shadow-xl z-50 font-normal border border-white/10 opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none text-center">
+                            <div className="absolute -bottom-1.5 left-[25%] sm:left-1/2 -translate-x-1/2 w-3 h-3 bg-gray-900/95 rotate-45 border-r border-b border-white/10"></div>
+                            <span className="relative z-10 block whitespace-normal leading-relaxed break-words">{tooltipInfo}</span>
                         </div>
                     </div>
                 )}
