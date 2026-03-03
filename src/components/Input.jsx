@@ -9,12 +9,12 @@ export function Input({ label, type = 'text', value, onChange, placeholder, name
                     {label}
                 </label>
                 {tooltipInfo && (
-                    <div className="group/tooltip flex items-center z-50">
-                        <div className="relative cursor-help flex items-center">
+                    <div className="group/tooltip flex items-center">
+                        <div className="relative cursor-help flex items-center z-20">
                             <Info className="w-4 h-4 text-gray-400 group-hover/tooltip:text-primary transition-colors" />
-                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-[2px] w-3 h-3 bg-gray-900 border-t border-l border-white/10 rotate-45 opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 pointer-events-none rounded-sm"></div>
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-[7px] w-3 h-3 bg-gray-900 border-b border-r border-white/10 rotate-45 opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none rounded-sm"></div>
                         </div>
-                        <div className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-max max-w-[95%] sm:max-w-full p-2.5 md:p-3 bg-gray-900 text-white text-[11px] md:text-xs rounded-xl shadow-xl font-normal border border-white/10 opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none text-center">
+                        <div className="absolute bottom-full mb-[8px] left-1/2 -translate-x-1/2 w-max max-w-[95%] sm:max-w-full p-2.5 md:p-3 bg-gray-900 text-white text-[11px] md:text-xs rounded-xl shadow-xl font-normal border border-white/10 opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none text-center z-10">
                             <span className="relative z-10 block whitespace-normal md:whitespace-pre-wrap leading-relaxed break-words">{tooltipInfo}</span>
                         </div>
                     </div>
