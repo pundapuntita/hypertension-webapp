@@ -11,37 +11,19 @@ export function HealthForm({ onSubmit }) {
     const navigate = useNavigate();
     const { t, i18n } = useTranslation();
     const [errors, setErrors] = useState({});
-    const [formData, setFormData] = useState(() => {
-        try {
-            const saved = sessionStorage.getItem('hp_liveForm');
-            return saved ? JSON.parse(saved) : {
-                age: '',
-                gender: 'male',
-                weight: '',
-                height: '',
-                temp: '',
-                heartRate: '',
-                rr: '',
-                spo2: ''
-            };
-        } catch {
-            return {
-                age: '',
-                gender: 'male',
-                weight: '',
-                height: '',
-                temp: '',
-                heartRate: '',
-                rr: '',
-                spo2: ''
-            };
-        }
+    const [formData, setFormData] = useState({
+        age: '',
+        gender: 'male',
+        weight: '',
+        height: '',
+        temp: '',
+        heartRate: '',
+        rr: '',
+        spo2: ''
     });
 
     const handleChange = (e) => {
-        const newData = { ...formData, [e.target.name]: e.target.value };
-        setFormData(newData);
-        sessionStorage.setItem('hp_liveForm', JSON.stringify(newData));
+        setFormData({ ...formData, [e.target.name]: e.target.value });
         if (errors[e.target.name]) {
             setErrors({ ...errors, [e.target.name]: null });
         }
@@ -49,9 +31,8 @@ export function HealthForm({ onSubmit }) {
 
     const fillExample = (type) => {
         setErrors({}); // Clear existing errors when auto-filling
-        let data = {};
         if (type === 'high') {
-            data = {
+            setFormData({
                 age: '65',
                 gender: 'male',
                 weight: '90',
@@ -60,9 +41,9 @@ export function HealthForm({ onSubmit }) {
                 heartRate: '115',
                 rr: '24',
                 spo2: '93'
-            };
+            });
         } else if (type === 'moderate') {
-            data = {
+            setFormData({
                 age: '45',
                 gender: 'male',
                 weight: '75',
@@ -71,9 +52,9 @@ export function HealthForm({ onSubmit }) {
                 heartRate: '95',
                 rr: '18',
                 spo2: '96'
-            };
+            });
         } else {
-            data = {
+            setFormData({
                 age: '28',
                 gender: 'female',
                 weight: '52',
@@ -82,10 +63,8 @@ export function HealthForm({ onSubmit }) {
                 heartRate: '72',
                 rr: '16',
                 spo2: '99'
-            };
+            });
         }
-        setFormData(data);
-        sessionStorage.setItem('hp_liveForm', JSON.stringify(data));
     };
 
     const handleSubmit = async () => {
@@ -151,7 +130,7 @@ export function HealthForm({ onSubmit }) {
     };
 
     return (
-        <div key={i18n.language} className="min-h-screen relative overflow-hidden bg-gradient-to-br from-pastel-green via-white to-pastel-blue">
+        <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-pastel-green via-white to-pastel-blue">
             {/* Soft decorative background circles */}
             <div className="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-pastel-bg/50 rounded-full blur-[80px]"></div>
             <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-pastel-pink/30 rounded-full blur-[80px]"></div>
@@ -167,21 +146,21 @@ export function HealthForm({ onSubmit }) {
                                 <ChevronLeft className="w-6 h-6" />
                             </button>
                             <div className="bg-white/60 backdrop-blur-sm px-4 py-2 rounded-2xl">
-                                <h1 className="text-2xl font-bold text-gray-800">{t('form_title')}</h1>
-                                <p className="text-gray-500 text-sm">{t('form_desc')}</p>
+                                <h1 key={`title-${i18n.language}`} className="text-2xl font-bold text-gray-800">{t('form_title')}</h1>
+                                <p key={`desc-${i18n.language}`} className="text-gray-500 text-sm">{t('form_desc')}</p>
                             </div>
                         </div>
 
                         {/* Example Data Buttons */}
                         <div className="flex gap-2">
                             <button onClick={() => fillExample('low')} type="button" className="text-xs px-3 py-2 rounded-xl bg-green-100/80 text-green-700 hover:bg-green-200 transition font-medium border border-green-200/50 shadow-sm backdrop-blur-sm shadow-green-900/5">
-                                ✨ {t('example_low_risk')}
+                                <span key={`btn-low-${i18n.language}`}>✨ {t('example_low_risk')}</span>
                             </button>
                             <button onClick={() => fillExample('moderate')} type="button" className="text-xs px-3 py-2 rounded-xl bg-orange-100/80 text-orange-700 hover:bg-orange-200 transition font-medium border border-orange-200/50 shadow-sm backdrop-blur-sm shadow-orange-900/5">
-                                ⚠️ {t('example_moderate_risk')}
+                                <span key={`btn-mod-${i18n.language}`}>⚠️ {t('example_moderate_risk')}</span>
                             </button>
                             <button onClick={() => fillExample('high')} type="button" className="text-xs px-3 py-2 rounded-xl bg-red-100/80 text-red-700 hover:bg-red-200 transition font-medium border border-red-200/50 shadow-sm backdrop-blur-sm shadow-red-900/5">
-                                🚨 {t('example_high_risk')}
+                                <span key={`btn-high-${i18n.language}`}>🚨 {t('example_high_risk')}</span>
                             </button>
                         </div>
                     </div>
@@ -253,7 +232,7 @@ export function HealthForm({ onSubmit }) {
                                             <div className="absolute bottom-full mb-3 right-0 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 w-64 p-4 bg-gray-900/95 backdrop-blur-md text-white text-sm rounded-2xl shadow-2xl z-50 font-normal border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 pointer-events-none text-left">
                                                 <div className="absolute -bottom-2 right-6 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 w-4 h-4 bg-gray-900/95 rotate-45 border-r border-b border-white/10"></div>
                                                 <div className="relative z-10">
-                                                    <p className="font-semibold mb-3 text-gray-200">{t('normal_ranges_title')}</p>
+                                                    <p key={`tooltip-nr-${i18n.language}`} className="font-semibold mb-3 text-gray-200">{t('normal_ranges_title')}</p>
                                                     <div className="space-y-2 text-xs text-gray-300">
                                                         <div className="flex justify-between items-center">
                                                             <span className="flex items-center gap-1.5"><Thermometer className="w-3.5 h-3.5 text-blue-400" /> Temp:</span>
